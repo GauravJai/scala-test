@@ -8,4 +8,12 @@ object ShoppingCart {
     apple * items.count(_ == "Apple") + orange * items.count(_ == "Orange")
   }
 
+  def buyOneGetOneApple(apples: Int): Int = {
+      0
+  }
+
+  def threeForTwoOrange(oranges: Int): Int = {
+    0
+  }
+
 }
