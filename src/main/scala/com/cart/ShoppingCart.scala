@@ -12,7 +12,7 @@ object ShoppingCart {
 
     if (applePrice > bananaPrice) {
       applePrice + orangePrice
-    } else{
+    } else {
       bananaPrice + orangePrice
     }
   }
@@ -26,7 +26,7 @@ object ShoppingCart {
   }
 
   def buyOneGetOneBanana(banana: Int): Int = {
-     banana/2 + banana % 2
+    banana / 2 + banana % 2
   }
 
 }
