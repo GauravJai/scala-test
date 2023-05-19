@@ -5,8 +5,16 @@ object ShoppingCart {
   def calculateTotalCost(items: List[String]): Double = {
     val apple = 0.60
     val orange = 0.25
-    apple * buyOneGetOneApple(items.count(_ == "Apple"))
-      + orange * threeForTwoOrange(items.count(_ == "Orange"))
+    val banana = 0.20
+    val bananaPrice = banana * buyOneGetOneBanana(items.count(_ == "Banana"))
+    val applePrice = apple * buyOneGetOneApple(items.count(_ == "Apple"))
+    val orangePrice = orange * threeForTwoOrange(items.count(_ == "Orange"))
+
+    if (applePrice > bananaPrice) {
+      applePrice + orangePrice
+    } else{
+      bananaPrice + orangePrice
+    }
   }
 
   def buyOneGetOneApple(apples: Int): Int = {
@@ -18,7 +26,7 @@ object ShoppingCart {
   }
 
   def buyOneGetOneBanana(banana: Int): Int = {
-     0
+     banana/2 + banana % 2
   }
 
 }
