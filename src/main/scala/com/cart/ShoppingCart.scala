@@ -17,4 +17,8 @@ object ShoppingCart {
     oranges - (oranges / 3)
   }
 
+  def buyOneGetOneBanana(banana: Int): Int = {
+     0
+  }
+
 }
