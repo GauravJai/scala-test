@@ -13,6 +13,13 @@ class ShoppingCartSpecs extends AnyFlatSpec with Matchers {
     totalCost shouldEqual 1.45
   }
 
+  it should "return sum up the cost of most valued between apple and banana" in {
+    val itemList = List("Apple", "Apple", "banana", "banana") // .60
+
+    val cost = ShoppingCart.calculateTotalCost(itemList)
+     cost shouldEqual .60
+  }
+
   "buyOneGetOneApple" should "return discounted count of apple to pay" in {
     val appleCount = ShoppingCart.buyOneGetOneApple(4)
     appleCount shouldEqual 2
@@ -37,10 +44,11 @@ class ShoppingCartSpecs extends AnyFlatSpec with Matchers {
     val bananaCount = ShoppingCart.buyOneGetOneBanana(3)
     bananaCount shouldEqual 2
   }
-  
+
   it should "return discounted count of banana when total count is even" in {
     val bananaCount = ShoppingCart.buyOneGetOneBanana(4)
     bananaCount shouldEqual 2
   }
+
 
 }
